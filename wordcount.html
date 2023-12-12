@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Word and Character Counter</title>
+  <link rel="icon" href=/logo.png type="image/x-icon">
+  <style>
+    #input-text {
+      width: 600px;
+      height: 346px;
+      margin-left: 447px;
+      margin-right: 20px;
+    }
+    #buttonpart{
+      margin-top: 20px;
+    margin-left: 651px;
+    }
+    .paraname{
+       color: rgb(247, 8, 8);
+       background-image: url(https://wallpapers.com/images/hd/plain-pink-background-dfir8ykl64nt66pd.jpg);
+      font-size: large;
+
+    }
+    .navbar {
+            background-color: black;
+            border-radius: 4px;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 19px 20px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar li a:hover {
+            background-color: pink;
+        }
+  </style>
+</head>
+
+<body bgcolor="LemonChiffon">
+  <header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/blog.html">Blogs</a></li>
+            <li><a href="/Privacy.html">Privacy Policy</a></li>
+            <li><a href="/term.html">T & C</a></li>
+            <li><a href="/converter.html">Tool Converter</a></li>
+        </ul>
+    </nav>
+</header>
+  <h1 align="center">Word and Character Counter</h1>
+  <textarea id="input-text" placeholder="Enter your text"></textarea>
+  <div id="buttonpart"><button onclick="countWordsAndCharacters()">Count Words and Characters</button></div>
+  <div class="paraname">
+    <p id="word-count"></p>
+    <p id="char-count"></p>
+  </div>
+  
+
+  <script>
+    function countWordsAndCharacters() {
+      var text = document.getElementById('input-text').value;
+      var wordCount = 0;
+      var charCount = 0;
+
+      // Remove leading and trailing white spaces
+      text = text.trim();
+
+      // Remove punctuation marks
+      text = text.replace(/[^\w\s-]/g, '');
+
+      // Split the text into an array of words
+      var words = text.split(/\s+/);
+
+      // Count the words
+      wordCount = words.length;
+
+      // Count the characters
+      charCount = text.length;
+
+      // Display the word count
+      document.getElementById('word-count').innerText = "Word count: " + wordCount;
+
+      // Display the character count
+      document.getElementById('char-count').innerText = "Character count: " + charCount;
+    }
+  </script>
+</body>
+
+</html>

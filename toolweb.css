@@ -1,0 +1,25 @@
+#para2 {
+    margin-top: -21px;
+    margin-left: 50%;
+}
+.divclass{
+    height: 200px;
+    width: 200px;
+    background-color: pink;
+    text-align: center;
+    text-decoration: blue;
+}
+#firstspan{
+    text-align: center;
+    text-decoration: blue;
+}
+@media  (max-width=500px) and (min-width=200px) {
+    .divclass{
+        height: 200px;
+        width: 250px;
+        /* background-color: pink; */
+        text-align: center;
+        text-decoration: blue;
+        background-color: yellow;
+    }
+}
